@@ -24,10 +24,12 @@ video {
 
 
 #timer {
-    font-size: 36px;
+    font-size: 48px;
     text-align: center;
     margin: 50px auto;
+    display: block;
 }
+
 
 #start-button, #stop-button, #reset-button {
     font-size: 24px;

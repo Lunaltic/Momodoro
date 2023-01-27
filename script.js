@@ -11,7 +11,6 @@ function toggleTimer() {
         clearInterval(countdown);
         startButton.innerHTML = "Iniciar";
         timerRunning = false;
-        resetButton.style.display = "block";
     } else {
         countdown = setInterval(() => {
             timeLeft--;
@@ -50,10 +49,3 @@ function resetTimer() {
 
 startButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
-
-let minutes = Math.floor(timeLeft / 60);
-let seconds = timeLeft % 60;
-if(seconds < 10) {
-  seconds = `0${seconds}`;
-}
-timerDisplay.innerHTML = `${minutes}:${seconds}`;

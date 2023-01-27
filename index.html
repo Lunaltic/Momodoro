@@ -9,9 +9,6 @@
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
-
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
   </head>
   <body>
     <h1>Momodoro</h1>
@@ -19,12 +16,12 @@
       Momodoro is a Pomodoro Timer
     </p>
     <div id="button-container">
-        <button id="start-button" onclick="toggleTimer()">Iniciar</button>
-        <button id="reset-button" onclick="resetTimer()" style="display: none;">Resetar</button>
+        <button id="start-button">Iniciar</button>
+        <button id="reset-button" style="display: none;">Resetar</button>
     </div>
 
    <span id="timer">25:00</span>
 
-    
+    <script src="script.js"></script>
   </body>
 </html>
