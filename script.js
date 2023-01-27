@@ -8,7 +8,7 @@ let timerRunning = false;
 
 displayTime(); // adicionando essa linha
 
-startButton.addEventListener("click", startTimer);
+startButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
 
 function displayTime() {
@@ -20,31 +20,31 @@ function displayTime() {
   timerDisplay.textContent = `${minutes}:${seconds}`;
 }
 
-function startTimer() {
-    if (intervalId) return; // impede que o cronômetro seja iniciado novamente se já estiver rodando
-    intervalId = setInterval(() => {
-        if (timeLeft <= 0) {
-            clearInterval(intervalId);
-            intervalId = null;
-            return;
-        }
-        timeLeft--;
-        displayTime();
-    }, 1000);
+function toggleTimer() {
+    if(intervalId){
+        clearInterval(intervalId);
+        intervalId = null;
+        startButton.innerHTML = 'Iniciar';
+    }else{
+        intervalId = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(intervalId);
+                intervalId = null;
+                return;
+            }
+            timeLeft--;
+            displayTime();
+        }, 1000);
+        startButton.innerHTML = 'Pausar';
+    }
 }
+
+
 
 function resetTimer() {
     clearInterval(intervalId);
     intervalId = null;
     timeLeft = 1500;
-    updateTimerDisplay();
 }
 
-function updateTimerDisplay() {
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
-    }
-    timerDisplay.innerHTML = `${minutes}:${seconds}`;
-}
+
