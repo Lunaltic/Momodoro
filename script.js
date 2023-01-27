@@ -1,4 +1,4 @@
-const startButton = document.getElementById("start-button");
+  const startButton = document.getElementById("start-button");
     const resetButton = document.getElementById("reset-button");
     const timerDisplay = document.getElementById("timer");
 
