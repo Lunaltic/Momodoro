@@ -1,6 +1,10 @@
 const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
 const timerDisplay = document.getElementById("timer");
+const resetButton = document.getElementById("reset-button");
+
+
+
 
 let countdown;
 let timeLeft = 1500;
@@ -29,5 +33,47 @@ function startTimer() {
   }
 }
 
-startButton.addEventListener("click", startTimer);
-stopButton.addEventListener("click", () => clearInterval(countount));
+startButton.addEventListener("click", toggleTimer);
+resetButton.addEventListener("click", resetTimer);
+
+function toggleTimer() {
+    if (timerRunning) {
+        clearInterval(countdown);
+        startButton.innerHTML = "Iniciar";
+        timerRunning = false;
+        resetButton.style.display = "block";
+    } else {
+        countdown = setInterval(() => {
+            timeLeft--;
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            if(seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+            timerDisplay.innerHTML = `${minutes}:${seconds}`;
+            if (timeLeft === 0) {
+                clearInterval(countdown);
+                timerRunning = false;
+                startButton.innerHTML = "Iniciar";
+                resetButton.style.display = "block";
+            }
+        }, 1000);
+        startButton.innerHTML = "Parar";
+        timerRunning = true;
+        resetButton.style.display = "none";
+    }
+}
+
+function resetTimer() {
+    clearInterval(countdown);
+    timeLeft = 1500;
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    if(seconds < 10) {
+        seconds = `0${seconds}`;
+    }
+    timerDisplay.innerHTML = `${minutes}:${seconds}`;
+    startButton.innerHTML = "Iniciar";
+    resetButton.style.display = "none";
+    timerRunning = false;
+}
