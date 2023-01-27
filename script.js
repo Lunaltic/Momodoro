@@ -10,6 +10,7 @@ let timerRunning = false;
 startButton.addEventListener("click", startTimer);
 resetButton.addEventListener("click", resetTimer);
 
+
 function startTimer() {
     if (intervalId) return; // impede que o cronômetro seja iniciado novamente se já estiver rodando
     intervalId = setInterval(() => {
@@ -54,12 +55,21 @@ function updateTimer() {
   if (timerRunning && timeLeft > 0) {
     setTimeout(function() {
       timeLeft--;
-      timer.innerHTML = formatTime(timeLeft);
+      timerDisplay.innerHTML = formatTime(timeLeft);
       updateTimer();
     }, 1000);
   } else if (timeLeft === 0) {
     timerRunning = false;
     startButton.innerHTML = 'Iniciar';
-    timer.innerHTML = 'Tempo esgotado!';
+    timerDisplay.innerHTML = 'Tempo esgotado!';
   }
+}
+
+function formatTime(time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  return `${minutes}:${seconds}`;
 }
