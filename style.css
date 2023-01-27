@@ -22,12 +22,16 @@ video {
   max-width: 100%;
 }
 
-#button-container {
-    position: relative;
+
+#timer {
+    font-size: 36px;
+    text-align: center;
+    margin: 50px auto;
 }
 
-#reset-button {
-    position: absolute;
-    top: 40px;
-    left: 0;
+#start-button, #stop-button, #reset-button {
+    font-size: 24px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
 }
