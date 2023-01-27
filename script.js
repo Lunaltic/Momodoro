@@ -4,6 +4,8 @@ const timerDisplay = document.getElementById("timer");
 
 let intervalId;
 let timeLeft = 1500; // 25 minutos em segundos
+let timerRunning = false;
+
 
 startButton.addEventListener("click", startTimer);
 resetButton.addEventListener("click", resetTimer);
@@ -35,4 +37,29 @@ function updateTimerDisplay() {
         seconds = `0${seconds}`;
     }
     timerDisplay.innerHTML = `${minutes}:${seconds}`;
+}
+
+
+function toggleTimer() {
+  timerRunning = !timerRunning;
+  if (timerRunning) {
+    updateTimer();
+    startButton.innerHTML = 'Pausar';
+  } else {
+    startButton.innerHTML = 'Iniciar';
+  }
+}
+
+function updateTimer() {
+  if (timerRunning && timeLeft > 0) {
+    setTimeout(function() {
+      timeLeft--;
+      timer.innerHTML = formatTime(timeLeft);
+      updateTimer();
+    }, 1000);
+  } else if (timeLeft === 0) {
+    timerRunning = false;
+    startButton.innerHTML = 'Iniciar';
+    timer.innerHTML = 'Tempo esgotado!';
+  }
 }
