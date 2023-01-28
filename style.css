@@ -27,6 +27,10 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   background-color: #0a0c1a;
+  
+      min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -50,4 +54,14 @@ video {
     margin: 20px auto;
     display: block;
     text-align: center;
+}
+
+
+footer{
+  margin-top: auto;
+  text-align:center;
+}
+
+a{
+  color: cyan;
 }
