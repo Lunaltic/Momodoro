@@ -1,22 +1,17 @@
-# Hello Website (blank)
+# Momodoro 🍁
 
-This is a basic static HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen 🪄 immediately in the preview window. You can upload assets like images or audio in `assets` to the left. The rest is up to you and your imagination.
+**Momodoro is a pomodoro counter.**
 
-## What's in this project?
+<ul>
+<li>Choose the task or tasks to be performed;</li>
+<li>Set the timer to the desired time (usually 25 minutes)</li>
+<li>Work on the chosen task until the alarm rings. If any major distractions arise, write them down and focus back on the task</li>
+<li>When the alarm goes off, make a mark on a piece of paper to count the number of intervals.</li>
+<li>If there are less than 4 marks, take a short break (3-5 minutes)</li>
+<liAfter the fourth appointment, take a longer break (20-30 minutes), resetting the appointment count and returning to step 1.</li>
+</ul>
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
 
-← `index.html`: This is the main HTML page for your site.
-
-← `style.css`: CSS files add styling rules to your content.
-
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
-
-## You built this with Glitch!
-
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+![Momodora_III_Badge_Foil](https://user-images.githubusercontent.com/74553272/215230333-95f9ac03-b0b3-4b1d-8ba2-4396f6c9d4b4.png)
+<br>
+<sup><sub>Character: Momo from Momodora III, a game by BombService, witch is not related to this project</sub></sup>
