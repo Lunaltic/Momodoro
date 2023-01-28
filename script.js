@@ -24,7 +24,7 @@ function toggleTimer() {
     if(intervalId){
         clearInterval(intervalId);
         intervalId = null;
-        startButton.innerHTML = 'Iniciar';
+        startButton.innerHTML = 'Start';
     }else{
         intervalId = setInterval(() => {
             if (timeLeft <= 0) {
@@ -35,7 +35,7 @@ function toggleTimer() {
             timeLeft--;
             displayTime();
         }, 1000);
-        startButton.innerHTML = 'Pausar';
+        startButton.innerHTML = 'Pause';
     }
 }
 
